@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="bos_crm" />
+        <module name="bos_fore" />
+        <module name="bos_management_dao" />
+        <module name="bos_management_domain" />
+        <module name="bos_management_service" />
+        <module name="bos_management_util" />
+        <module name="bos_management_web" />
+        <module name="bos_sms" />
+        <module name="shiro" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="bos_crm" target="1.7" />
+      <module name="bos_fore" target="1.7" />
+      <module name="bos_management_dao" target="1.7" />
+      <module name="bos_management_domain" target="1.7" />
+      <module name="bos_management_parent" target="1.5" />
+      <module name="bos_management_service" target="1.7" />
+      <module name="bos_management_util" target="1.7" />
+      <module name="bos_management_web" target="1.7" />
+      <module name="bos_sms" target="1.7" />
+      <module name="common_parent" target="1.5" />
+      <module name="shiro" target="1.5" />
+      <module name="shiroandehache" target="1.7" />
+      <module name="shiroAndEhache" target="1.7" />
+      <module name="shiroAndEhahce" target="1.5" />
+      <module name="shiroD" target="1.7" />
+      <module name="shirodemo" target="1.7" />
+      <module name="shrio" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

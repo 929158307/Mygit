@@ -1,0 +1,36 @@
+<html>
+<head>
+	<meta charset="utf-8" >
+	<title>入门小Demo-1(表达式)</title>
+	<script src="angular.min.js"></script>
+	<script>
+		//定义模块
+		var app = angular.module('myApp',[]);
+		//定义控制器
+		app.controller('myController',function($scope,$http){
+			//查询品牌结果集
+			//发出请求    入参: 基本类型  简单类型    入参:对象  无 
+			$http.get('/brand/findAll.do').success(
+				function(response){
+					$scope.list = response;
+				}		
+				
+			);
+			      
+						
+
+		});
+		
+	</script>
+
+</head>
+<body ng-app="myApp" ng-controller="myController">
+	<table>
+		<tr ng-repeat="entity in list" >
+			<td >ID:{{entity.id}}</td>
+			<td >名称:{{entity.name}}</td>
+			<td >首字母:{{entity.firstChar}}</td>
+		</tr>
+	</table>
+</body>
+</html>

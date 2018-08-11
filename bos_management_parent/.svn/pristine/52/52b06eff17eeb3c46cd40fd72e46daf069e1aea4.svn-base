@@ -1,0 +1,47 @@
+
+package cn.itcast.bos.web.action.base;
+
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
+
+import cn.itcast.bos.domain.base.FixedArea;
+import cn.itcast.bos.service.base.FixedAreaService;
+import cn.itcast.bos.web.action.common.BaseAction;
+
+@Controller
+@Scope("prototype")
+@Namespace("/")
+@ParentPackage("struts-default")
+@Results({
+	@Result(name="list",type="redirect",location="/pages/base/fixed_area.jsp")
+})
+public class FixedAreaAction extends BaseAction<FixedArea> {
+
+	@Autowired
+	private FixedAreaService fixedAreaService;
+	
+	
+	//接收提交多个分区id
+	private String[] subAreaId;
+	public void setSubAreaId(String[] subAreaId) {
+		this.subAreaId = subAreaId;
+	}
+
+	/**
+	  * @Description: 1、保存定区  2、让分区关联定区
+	  * @return
+	  * @throws Exception
+	  *	  
+	 */
+	@Action("fixedAreaAction_save")
+	public String save() throws Exception {
+		fixedAreaService.save(model, subAreaId);
+		return "list";
+	}
+}

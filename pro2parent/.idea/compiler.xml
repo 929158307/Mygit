@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="pro2-web" />
+        <module name="pro2Dao" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.7">
+      <module name="nio" target="1.7" />
+      <module name="pro2-parent" target="1.7" />
+      <module name="pro2mapper" target="1.7" />
+      <module name="pro2parent" target="1.7" />
+      <module name="pro2pojo" target="1.7" />
+      <module name="pro2Service" target="1.7" />
+      <module name="pro2web" target="1.7" />
+      <module name="SolrJ" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

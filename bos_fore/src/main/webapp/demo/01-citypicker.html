@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../plugins/city-picker.css">
+<script src="../plugins/jquery.min.js"></script><!-- jQuery is required -->
+<script src="../plugins/city-picker.data.js"></script>
+<script src="../plugins/city-picker.js"></script>
+</head>
+<body>
+<!-- 方式一：HTML -->
+<div style="position: relative;"><!-- container -->
+  <input readonly type="text" data-toggle="city-picker" name="sendAreaInfo">  <!-- 提交参数值形式：北京市/北京市/昌平区  -->
+</div>
+
+<!-- 方式二：js -->
+<hr>
+<div style="position: relative;"><!-- container -->
+  <input id="city-picker1" readonly type="text">
+  <input type="button" value="重置" id="resetBtn">
+  <input type="button" value="初始化" id="initBtn">
+  <script type="text/javascript">
+  	$("#city-picker1").citypicker();
+  	
+  	$("#resetBtn").click(function(){
+  		//调用cityPicker组件方法
+  		$("#city-picker1").citypicker("reset");
+  	})
+  	
+  	$("#initBtn").click(function(){
+  	//调用cityPicker组件方法
+  		$("#city-picker1").citypicker("reset");
+  		$("#city-picker1").citypicker("destroy");
+  		//初始化为某个省市区
+  		$("#city-picker1").citypicker({
+  			province:"北京市",
+  			city:"北京市",
+  			district:'昌平区'
+ 		})
+  	})
+  	
+  </script>
+</div>
+</body>
+</html>

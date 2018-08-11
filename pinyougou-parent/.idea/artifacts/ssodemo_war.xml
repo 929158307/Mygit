@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ssodemo:war">
+    <output-path>$PROJECT_DIR$/ssodemo/target</output-path>
+    <root id="archive" name="ssodemo.war">
+      <element id="artifact" artifact-name="ssodemo:war exploded" />
+    </root>
+  </artifact>
+</component>

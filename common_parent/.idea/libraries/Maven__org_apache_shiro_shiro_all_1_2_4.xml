@@ -1,0 +1,37 @@
+<component name="libraryTable">
+  <library name="Maven: org.apache.shiro:shiro-all:1.2.4">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-all/1.2.4/shiro-all-1.2.4.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-all/1.2.4/shiro-all-1.2.4-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-all/1.2.4/shiro-all-1.2.4-sources.jar!/" />
+      <root url="jar://D:/项目一/速运快递项目-day11/资料/02 ApacheShiro课程资料/shiro-root-1.2.2-source-release.zip!/shiro-root-1.2.2/core/src/main/java" />
+      <root url="jar://D:/项目一/速运快递项目-day11/资料/02 ApacheShiro课程资料/shiro-root-1.2.2-source-release.zip!/shiro-root-1.2.2/core/src/test/java" />
+      <root url="jar://D:/项目一/速运快递项目-day11/资料/02 ApacheShiro课程资料/shiro-root-1.2.2-source-release.zip!/shiro-root-1.2.2/samples/aspectj/src/main/java" />
+      <root url="jar://D:/项目一/速运快递项目-day11/资料/02 ApacheShiro课程资料/shiro-root-1.2.2-source-release.zip!/shiro-root-1.2.2/samples/aspectj/src/test/java" />
+      <root url="jar://D:/项目一/速运快递项目-day11/资料/02 ApacheShiro课程资料/shiro-root-1.2.2-source-release.zip!/shiro-root-1.2.2/samples/quickstart/src/main/java" />
+      <root url="jar://D:/项目一/速运快递项目-day11/资料/02 ApacheShiro课程资料/shiro-root-1.2.2-source-release.zip!/shiro-root-1.2.2/samples/spring-client/src/main/java" />
+      <root url="jar://D:/项目一/速运快递项目-day11/资料/02 ApacheShiro课程资料/shiro-root-1.2.2-source-release.zip!/shiro-root-1.2.2/samples/spring-hibernate/src/main/java" />
+      <root url="jar://D:/项目一/速运快递项目-day11/资料/02 ApacheShiro课程资料/shiro-root-1.2.2-source-release.zip!/shiro-root-1.2.2/samples/spring/src/main/java" />
+      <root url="jar://D:/项目一/速运快递项目-day11/资料/02 ApacheShiro课程资料/shiro-root-1.2.2-source-release.zip!/shiro-root-1.2.2/samples/standalone/src/main/java" />
+      <root url="jar://D:/项目一/速运快递项目-day11/资料/02 ApacheShiro课程资料/shiro-root-1.2.2-source-release.zip!/shiro-root-1.2.2/samples/web/src/test/java" />
+      <root url="jar://D:/项目一/速运快递项目-day11/资料/02 ApacheShiro课程资料/shiro-root-1.2.2-source-release.zip!/shiro-root-1.2.2/support/aspectj/src/main/aspect" />
+      <root url="jar://D:/项目一/速运快递项目-day11/资料/02 ApacheShiro课程资料/shiro-root-1.2.2-source-release.zip!/shiro-root-1.2.2/support/aspectj/src/main/java" />
+      <root url="jar://D:/项目一/速运快递项目-day11/资料/02 ApacheShiro课程资料/shiro-root-1.2.2-source-release.zip!/shiro-root-1.2.2/support/aspectj/src/test/java" />
+      <root url="jar://D:/项目一/速运快递项目-day11/资料/02 ApacheShiro课程资料/shiro-root-1.2.2-source-release.zip!/shiro-root-1.2.2/support/cas/src/main/java" />
+      <root url="jar://D:/项目一/速运快递项目-day11/资料/02 ApacheShiro课程资料/shiro-root-1.2.2-source-release.zip!/shiro-root-1.2.2/support/ehcache/src/main/java" />
+      <root url="jar://D:/项目一/速运快递项目-day11/资料/02 ApacheShiro课程资料/shiro-root-1.2.2-source-release.zip!/shiro-root-1.2.2/support/ehcache/src/test/java" />
+      <root url="jar://D:/项目一/速运快递项目-day11/资料/02 ApacheShiro课程资料/shiro-root-1.2.2-source-release.zip!/shiro-root-1.2.2/support/guice/src/main/java" />
+      <root url="jar://D:/项目一/速运快递项目-day11/资料/02 ApacheShiro课程资料/shiro-root-1.2.2-source-release.zip!/shiro-root-1.2.2/support/guice/src/test/java" />
+      <root url="jar://D:/项目一/速运快递项目-day11/资料/02 ApacheShiro课程资料/shiro-root-1.2.2-source-release.zip!/shiro-root-1.2.2/support/quartz/src/main/java" />
+      <root url="jar://D:/项目一/速运快递项目-day11/资料/02 ApacheShiro课程资料/shiro-root-1.2.2-source-release.zip!/shiro-root-1.2.2/support/spring/src/main/java" />
+      <root url="jar://D:/项目一/速运快递项目-day11/资料/02 ApacheShiro课程资料/shiro-root-1.2.2-source-release.zip!/shiro-root-1.2.2/support/spring/src/test/java" />
+      <root url="jar://D:/项目一/速运快递项目-day11/资料/02 ApacheShiro课程资料/shiro-root-1.2.2-source-release.zip!/shiro-root-1.2.2/tools/hasher/src/main/java" />
+      <root url="jar://D:/项目一/速运快递项目-day11/资料/02 ApacheShiro课程资料/shiro-root-1.2.2-source-release.zip!/shiro-root-1.2.2/web/src/main/java" />
+      <root url="jar://D:/项目一/速运快递项目-day11/资料/02 ApacheShiro课程资料/shiro-root-1.2.2-source-release.zip!/shiro-root-1.2.2/web/src/test/java" />
+    </SOURCES>
+  </library>
+</component>

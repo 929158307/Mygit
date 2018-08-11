@@ -1,0 +1,17 @@
+package cn.itcast.bos.dao.base;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import cn.itcast.bos.domain.base.Standard;
+
+/**
+ * @Description: 收派标准dao
+ *JpaRepository T:操作实体class  Serializable:主键属性类型
+ * @Title: StandardDao.java
+ * @date 2018年6月12日 上午11:23:34
+ */
+public interface StandardDao extends JpaRepository<Standard, Integer>{
+
+	//实现增删改查分页方法
+	
+}

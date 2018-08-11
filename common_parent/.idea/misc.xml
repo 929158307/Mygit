@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/.." />
+    <file type="web" url="file://$PROJECT_DIR$/shiro" />
+    <file type="web" url="file://$PROJECT_DIR$/shiroAndEhache" />
+    <file type="web" url="file://$PROJECT_DIR$/../shiroandehache" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/../bos_fore/pom.xml" />
+        <option value="$PROJECT_DIR$/../bos_crm/pom.xml" />
+        <option value="$PROJECT_DIR$/../bos_sms/pom.xml" />
+        <option value="$PROJECT_DIR$/../bos_management_parent/pom.xml" />
+        <option value="$PROJECT_DIR$/../pom.xml" />
+        <option value="$PROJECT_DIR$/../shiro/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/../bos_management_parent/pom.xml" />
+        <option value="$PROJECT_DIR$/shiro/pom.xml" />
+        <option value="$PROJECT_DIR$/shiroAndEhache/pom.xml" />
+        <option value="$PROJECT_DIR$/shirodemo/pom.xml" />
+        <option value="$PROJECT_DIR$/../shiroAndEhache/pom.xml" />
+        <option value="$PROJECT_DIR$/../shiroD/pom.xml" />
+        <option value="$PROJECT_DIR$/../shiroandehache/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="1.7" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="SvnBranchConfigurationManager">
+    <option name="myConfigurationMap">
+      <map>
+        <entry key="$PROJECT_DIR$/../bos_management_parent">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="trunkUrl" value="https://lv-pc:444/svn/bos317/bos_management_parent" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="trunkUrl" value="https://lv-pc:444/svn/bos317/common_parent" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="mySupportsUserInfoFilter" value="true" />
+  </component>
+</project>

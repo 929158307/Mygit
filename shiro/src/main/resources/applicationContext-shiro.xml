@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:jaxws="http://cxf.apache.org/jaxws"
+       xsi:schemaLocation="
+						http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+						http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+						http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+						http://www.springframework.org/schema/data/jpa
+						http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+						http://cxf.apache.org/jaxws
+						http://cxf.apache.org/schemas/jaxws.xsd">
+    <!--<bean id="shiro" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">-->
+        <!--<property name="securityManager" ref="securityManager"/>-->
+        <!--<property name="loginUrl" value="/login.jsp"></property>-->
+        <!--<property name="unauthorizedUrl" value="/unauthorized.jsp"></property>-->
+        <!-- 配置过滤器链：配置项目中url对应拦截规则（怎么验权）
+            等号左侧代表项目url    /** 项目中所有url
+            等号右侧代表url经过哪个过滤器（shiro框架提供，使用简称即可）
+            authc:表单认证过滤器（访问url，要求当前用户必须认证通过后才有权限访问）
+            anon:匿名过滤器（访问url，不需要登陆，不需要有权限==直接放行）
+            perms:权限授权过滤器（访问url,要求当前用户必须有某个权限）
+            roles:角色授权过滤器（访问url,要求当前用户必须有某个角色）
+         -->
+        <!--<property name="filterChainDefinitions">-->
+            <!--<value>-->
+                <!--/js/** = anon-->
+                <!--/images/** = anon-->
+                <!--/css/** = anon-->
+                <!--/login.jsp = anon-->
+                <!--/validatecode.jsp* = anon-->
+                <!--/userAction_login.action = anon-->
+                <!--/pages/base/standard.jsp = perms["standard_page"]-->
+                <!--&lt;!&ndash; 				/courierAction_delete.action = perms["courier_delete"] &ndash;&gt;-->
+                <!--/pages/base/courier.jsp = roles["admin"]-->
+                <!--/** = authc-->
+            <!--</value>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realm" ref="bosRealm"/>
+    </bean>
+    <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator">
+        <property name="proxyTargetClass" value="true"></property>
+    </bean>
+
+    <!-- 配置验权切面：通知/增强（扩展功能代码：验证权限）+切点（shiro注解所在方法） -->
+    <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+        <property name="securityManager" ref="securityManager"/>
+    </bean>
+</beans>

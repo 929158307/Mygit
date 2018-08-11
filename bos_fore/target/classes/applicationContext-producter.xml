@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+						http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+
+				        ">
+    <bean id="amqConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+        <constructor-arg index="0" value="admin"></constructor-arg>
+        <constructor-arg index="1" value="admin"></constructor-arg>
+        <constructor-arg index="2" value="tcp://localhost:61616"></constructor-arg>
+    </bean>
+
+    <!-- spring整合完activeMQ后提供缓存Session对象连接工厂 -->
+    <bean id="cachingConnectionFactory" class="org.springframework.jms.connection.CachingConnectionFactory">
+        <property name="targetConnectionFactory" ref="amqConnectionFactory"></property>
+        <property name="sessionCacheSize" value="5"></property>
+    </bean>
+
+    <!--
+        spring整合完activeMQ提供jmsTemplate模板：通过模板对象向队列中写消息
+        通过pubSubDomain属性指定发送消息模型，默认是点对点
+     -->
+    <bean id="jmsQueueTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory" ref="cachingConnectionFactory"></property>
+        <property name="pubSubDomain" value="false"></property>
+    </bean>
+
+    <bean id="jmsTopicTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory" ref="cachingConnectionFactory"></property>
+        <property name="pubSubDomain" value="true"></property>
+    </bean>
+
+</beans>

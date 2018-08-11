@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa" 
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:amq="http://activemq.apache.org/schema/core"
+	xmlns:jms="http://www.springframework.org/schema/jms"
+	xsi:schemaLocation="
+						http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+						http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+						http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+						http://www.springframework.org/schema/data/jpa 
+						http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+						http://www.springframework.org/schema/jms
+				        http://www.springframework.org/schema/jms/spring-jms.xsd
+						http://activemq.apache.org/schema/core
+				        http://activemq.apache.org/schema/core/activemq-core-5.8.0.xsd
+				        ">
+	<!-- 配置连接工厂对象 方式一：通过amq名称空间创建（导入xben-spring依赖），方式二：使用传统方式bean标签费方式创建-->
+<!-- 	 <amq:connectionFactory id="amqConnectionFactory"  -->
+<!-- 		userName="admin"  -->
+<!-- 		password="admin"  -->
+<!-- 		brokerURL="tcp://localhost:61616"> -->
+<!-- 	</amq:connectionFactory> -->
+		
+	<bean id="amqConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+		<constructor-arg index="0" value="admin"></constructor-arg>
+		<constructor-arg index="1" value="admin"></constructor-arg>
+		<constructor-arg index="2" value="tcp://localhost:61616"></constructor-arg>
+	</bean>
+	
+	<!-- spring整合完activeMQ后提供缓存Session对象连接工厂 -->
+	<bean id="cachingConnectionFactory" class="org.springframework.jms.connection.CachingConnectionFactory">
+		<property name="targetConnectionFactory" ref="amqConnectionFactory"></property>
+		<property name="sessionCacheSize" value="5"></property>
+	</bean>
+
+	<!-- 开启组件扫描：创建web,service层对象 -->
+	<context:component-scan base-package="cn.itcast"></context:component-scan>
+
+	<!-- 注册监听器
+		acknowledge：应答模式，auto自动应答
+		destination-type：队列类型
+	 -->
+	<jms:listener-container 
+			acknowledge="auto"  destination-type="queue"  connection-factory="cachingConnectionFactory">
+			<!-- 指定监听器 监听哪个队列 -->
+			<jms:listener destination="sendMail" ref="sendEmail"/>
+	</jms:listener-container>
+
+	<jms:listener-container
+			acknowledge="auto"  destination-type="queue"  connection-factory="cachingConnectionFactory">
+		<!-- 指定监听器 监听哪个队列 -->
+		<jms:listener destination="sendMessage" ref="sendMessage"/>
+	</jms:listener-container>
+
+</beans>
